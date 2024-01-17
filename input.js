@@ -30,7 +30,12 @@ const handleUserInput = function (key) {
   if (key === "d") {
     connection.write(CMD["d"]);
   }
-  //if (key === KEY[5] || Key === KEY[6])
+  if (key === "q") {
+    connection.write(CMD["q"])
+  }
+  if (key === "e") {
+    connection.write(CMD["e"])
+  }
   
   
     
