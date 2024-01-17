@@ -1,7 +1,7 @@
 let connection;
 
 const setupInput = function (conn) {
-  connection = conn;
+  connection = conn
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
@@ -11,6 +11,7 @@ const setupInput = function (conn) {
 };
 
 const handleUserInput = function (key) {
+  
   if (key === "\u0003") {
     process.exit();
   }
@@ -26,7 +27,17 @@ const handleUserInput = function (key) {
   if (key === "d") {
     connection.write("Move: right");
   }
+  if (key === "g") {
+    connection.write("Say: GG")
+  }
+  if (key === "h") {
+    connection.write("Say: Hey Bub.")
+  }
+  if (key === "e") {
+    connection.write("Say: SNEK OFF")
+  }
 };
+
 setupInput(handleUserInput);
 
 module.exports = {setupInput}
