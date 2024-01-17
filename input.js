@@ -1,3 +1,5 @@
+const { KEY, MSG, CMD } = require("./constants");
+
 let connection;
 
 const setupInput = function (conn) {
@@ -11,31 +13,28 @@ const setupInput = function (conn) {
 };
 
 const handleUserInput = function (key) {
+  //console.log(key)
   
   if (key === "\u0003") {
     process.exit();
   }
-  if (key === "w") {
-    connection.write("Move: up");
+  if (key ===  "w") {
+    connection.write(CMD["w"]);
   }
   if (key === "a") {
-    connection.write("Move: left");
+    connection.write(CMD["a"]);
   }
   if (key === "s") {
-    connection.write("Move: down");
+    connection.write(CMD["s"]);
   }
   if (key === "d") {
-    connection.write("Move: right");
+    connection.write(CMD["d"]);
   }
-  if (key === "g") {
-    connection.write("Say: GG")
-  }
-  if (key === "h") {
-    connection.write("Say: Hey Bub.")
-  }
-  if (key === "e") {
-    connection.write("Say: SNEK OFF")
-  }
+  //if (key === KEY[5] || Key === KEY[6])
+  
+  
+    
+  
 };
 
 setupInput(handleUserInput);
